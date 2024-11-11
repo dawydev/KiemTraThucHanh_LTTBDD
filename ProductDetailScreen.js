@@ -8,8 +8,10 @@ export default function ProductDetailScreen({ route }) {
     <View style={styles.container}>
       <Image source={{ uri: product.image }} style={styles.image} />
       <Text style={styles.productName}>{product.name}</Text>
-      <Text style={styles.discount}>{product.discount}% OFF | ${product.discountedPrice}</Text>
+      <View style={{flexDirection:'row'}}>
+      <Text style={styles.discount}>{product.discount}% OFF ${product.discountedPrice}</Text>
       <Text style={styles.originalPrice}>${product.originalPrice}</Text>
+      </View>
 
       <Text style={styles.descriptionTitle}>Description</Text>
       <Text style={styles.descriptionText}>{product.description}</Text>
@@ -28,29 +30,33 @@ export default function ProductDetailScreen({ route }) {
 
 const styles = StyleSheet.create({
   container: {
+    marginTop:30,
     flex: 1,
     padding: 20,
     backgroundColor: '#FFF',
   },
   image: {
     width: '100%',
-    height: 200,
+    height: 400,
     resizeMode: 'contain',
     marginBottom: 20,
+    backgroundColor: '#F8E6E5',
+    borderRadius: 10,
   },
   productName: {
-    fontSize: 24,
+    fontSize: 30,
     fontWeight: 'bold',
     marginBottom: 10,
   },
   discount: {
     fontSize: 18,
-    color: 'green',
+    color: 'gray',
     marginBottom: 5,
   },
   originalPrice: {
+    marginLeft: 30,
     fontSize: 18,
-    color: 'grey',
+    color: 'black',
     textDecorationLine: 'line-through',
     marginBottom: 20,
   },
@@ -79,13 +85,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   addToCartButton: {
-    backgroundColor: '#FF6347',
+    backgroundColor: '#E94141',
     paddingVertical: 15,
     paddingHorizontal: 20,
     borderRadius: 5,
+    width: '70%',
+    alignContent: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 30,
   },
   addToCartText: {
     color: '#FFF',
     fontSize: 16,
+
   },
 });

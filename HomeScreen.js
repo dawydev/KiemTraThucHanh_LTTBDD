@@ -7,13 +7,15 @@ export default function HomeScreen({ navigation }) {
       <Text style={styles.title}>A premium online store for </Text>
       <Text style={styles.title1}> sporter and their stylish choice</Text>
 
-      <View style={{width:'100%', height:300,    backgroundColor: '#F8E6E5',borderRadius:10, alignContent:'center', justifyContent:'center', alignItems:'center'}}>
+      <View style={{width:'100%', height:300,    backgroundColor: '#F8E6E5',borderRadius:30, alignContent:'center', justifyContent:'center', alignItems:'center'}}>
       <Image 
         source={require('./assets/xedaphomescreen.png')} // Replace with a real image path
         style={styles.image}
       />
       </View>
-      <Text style={styles.shopName}>POWER BIKE SHOP</Text>
+      <Text style={styles.shopName}>POWER BIKE</Text>
+      <Text style={styles.shopName1}>SHOP</Text>
+
       <TouchableOpacity
         style={styles.button}
         onPress={() => navigation.navigate('ProductList')}
@@ -48,9 +50,15 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   shopName: {
+    marginTop: 20,
     fontSize: 20,
     fontWeight: '800',
-    marginBottom: 20,
+    marginBottom: 5,
+  },
+  shopName1: {
+    fontSize: 20,
+    fontWeight: '800',
+    marginBottom: 40,
   },
   button: {
     backgroundColor: '#FF4D4D',

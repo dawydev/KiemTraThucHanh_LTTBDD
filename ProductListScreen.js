@@ -28,7 +28,10 @@ export default function ProductListScreen() {
     <TouchableOpacity onPress={() => navigateToProductDetail(item)} style={styles.product}>
       <Image source={{ uri: item.image }} style={styles.image} />
       <Text style={styles.productName}>{item.name}</Text>
-      <Text style={styles.productPrice}>${item.price}</Text>
+      <View style={{flexDirection:'row'}}>
+      <Text style={{color:'#F7BA83', marginRight:5, marginTop:1}}>$</Text>
+      <Text style={styles.productPrice}>{item.price}</Text>
+      </View>
     </TouchableOpacity>
   );
 
@@ -63,15 +66,17 @@ export default function ProductListScreen() {
 
 const styles = StyleSheet.create({
   container: {
+    marginTop:30,
     flex: 1,
     padding: 10,
     backgroundColor: '#FFF'
   },
   title: {
     fontSize: 24,
-    fontWeight: 'bold',
-    textAlign: 'center',
+    fontWeight: '800',
     marginBottom: 20,
+    marginTop: 20,
+    color: '#FF4D4D',
   },
   filterContainer: {
     flexDirection: 'row',
@@ -101,7 +106,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 10,
     margin: 5,
-    backgroundColor: '#F8F8F8',
+    backgroundColor: '#FEF5ED',
     alignItems: 'center',
     borderRadius: 8,
     borderWidth: 1,
@@ -117,9 +122,10 @@ const styles = StyleSheet.create({
   productName: {
     fontSize: 18,
     textAlign: 'center',
+    color: '#827E7A',
   },
   productPrice: {
     fontSize: 16,
-    color: '#FF4D4D',
+    color: 'black',
   },
 });
