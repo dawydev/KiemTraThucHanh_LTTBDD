@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 
 export default function ProductDetailScreen({ route }) {
-  const { product } = route.params;  // Nhận dữ liệu sản phẩm từ route
+  const { product } = route.params;
 
   return (
     <View style={styles.container}>
